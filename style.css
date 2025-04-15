@@ -5,7 +5,11 @@
     box-sizing: border-box;
 }
 
-body {
+html {
+    height: 100%;
+}
+
+.IndexBody {
     font-family: Arial, sans-serif;
     line-height: 1.6;
     background-color: wheat;
@@ -25,16 +29,16 @@ header {
 nav {
     background-color: #006699;
 }
-a{
+
+a {
     text-decoration: none;
 }
-.left
-{
+
+.left {
     float: left;
 }
 
-.right
-{
+.right {
     float: right;
 }
 
@@ -63,16 +67,25 @@ nav a:hover {
     font-weight: bold;
 }
 
-/* Oldalsáv és tartalom */
+/* Oldalsáv stílus */
 aside {
-    background-color: salmon;
-    padding: 15px;
-    display: flex;
-    flex-direction: column;
-    justify-content: center; /* ez teszi középre függőlegesen */
-    height: 100%; /* szükséges, hogy legyen mire igazítani */
-    text-align: center;
-    height: 10%;
+    width: 250px;
+    padding: 20px;
+    background-color: #f4f4f4;
+    border: 1px solid #ddd;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1);
+    position: absolute; /* Rögzített pozíció a képernyőn */
+    top: 30%; /* A nav alatt kezdődik */
+    bottom: 0; /* Az oldal aljáig ér */
+    right: 0;
+    height: 50%; /* Kitölti a képernyőt, figyelembe véve a nav és footer magasságát */
+    overflow-y: auto; /* Görgetés, ha túl sok tartalom */
+}
+
+aside p {
+    margin: 10px 0;
+    font-size: 16px;
+    color: #333;
 }
 
 
@@ -99,6 +112,7 @@ footer {
 /* Reszponzív elrendezés */
 @media (min-width: 768px) {
     body {
+        min-height: 100vh; /* TELJES magasság! */
         display: grid;
         grid-template-areas: 
             "header header"
@@ -106,8 +120,8 @@ footer {
             "content aside"
             "footer footer";
         grid-template-columns: 3fr 1fr;
+        grid-template-rows: auto auto 1fr auto; /* fontos! */
     }
-
 
     header { grid-area: header; }
     nav    { grid-area: nav; }
@@ -162,4 +176,52 @@ footer {
 .car-item p {
     font-weight: bold;
     color: #333;
+}
+
+/* */
+
+.BodyBody {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    background-color: wheat;
+    height: 100%;
+    width: 100%;
+}
+
+table {
+    width: 50%;
+    border-collapse: collapse; /* fontos a belső szegélyekhez */
+    margin-top: 20px;
+    border: 2px solid #444; /* külső szegély */
+}
+
+th, td {
+    border: 1px solid #888; /* belső szegélyek */
+    padding: 15px 10px;
+    text-align: center;
+}
+
+#search {
+    display: block;
+    margin-top: 20px; /* vagy amennyit akarsz */
+    margin-bottom: 10px; /* hogy a táblázattól is elváljon */
+}
+
+.DeleteButton {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: auto;
+    width: 100%;
+    font-size: 20px;
+}
+
+/* Disclaimer - lábléc fölötti hely */
+.disclaimer {
+    background-color: wheat;
+    width: 50%;
+    text-align: left;
+    font-size: 18px;
+    color: red;
+    font-weight: bold;
 }

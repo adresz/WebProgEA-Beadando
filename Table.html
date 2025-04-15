@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+    <meta charset="UTF-8">
+    <title>CRUD LocalStorage</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js"></script>
+</head>
+<body class="BodyBody">
+    
+    <header>
+        <h1>Web-programozás-1 Előadás Házi feladat</h1>
+    </header>
+
+    
+    <nav>
+        <ul>
+            <li><a href="index.html">Kezdőlap</a></li>
+            <li class="active"><a href="Table.html">Táblázat</a></li>
+            <li><a href="HTML5.html">HTML5</a></li>
+            <li><a href="ChartJS.html">ChartJS</a></li>
+            <li><a href="AJAX.html">AJAX</a></li>
+            <li><a href="OOJS.html">OOJS</a></li>
+        </ul>
+    </nav>
+    
+    <aside>
+        <p>Oldalsáv</p>
+        <p>Oldalsáv</p>
+        <p>Oldalsáv</p>
+        <p>Oldalsáv</p>
+        <p>Oldalsáv</p>
+        <p>Oldalsáv</p>
+        <p>Oldalsáv</p>
+        <p>Oldalsáv</p>
+    </aside>
+    <div class="content">
+        <input type="text" id="name" placeholder="Név" required minlength="4">
+        <input type="text" id="city" placeholder="Város" required>
+        <input type="number" id="age" placeholder="Kor" min="1" max="120" required>
+        <input type="text" id="email" placeholder="Email" required>
+        <button onclick="addRow()">Hozzáadás</button>
+        
+        <input type="text" id="search" placeholder="Keresés..." onkeyup="searchTable()">
+        
+        <table id="dataTable">
+            <thead>
+                <tr>
+                    <th onclick="sortTable(0)">Név</th>
+                    <th onclick="sortTable(1)">Város</th>
+                    <th onclick="sortTable(2)">Kor</th>
+                    <th onclick="sortTable(3)">Email</th>
+                    <th>Törlés</th>
+                </tr>
+            </thead>
+            <tbody></tbody>
+        </table>        
+        <div class="disclaimer">
+            <p>Adatok változtatásához, kattintsunk egy megadott oszlopban lévő tartalomra!</p>
+            <p>Ahhoz, hogy a változtatott adatokat mentsük, ahhoz kattintsunk egy másik oszlopba/egy üres helyre az oldalon!!</p>
+        </div>
+    </div>
+
+        
+    <footer>
+        <p class="left">Készítette: Tiger Adrián(C3Z0TY)</p>
+        <p class="right">Dobóczi Levente(JC84WP)</p>
+    </footer>
+
+    
+</body>
+</html>
