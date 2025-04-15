@@ -80,6 +80,7 @@ aside {
     right: 0;
     height: 50%; /* Kitölti a képernyőt, figyelembe véve a nav és footer magasságát */
     overflow-y: auto; /* Görgetés, ha túl sok tartalom */
+    text-align: center;
 }
 
 aside p {
@@ -195,10 +196,14 @@ table {
     border: 2px solid #444; /* külső szegély */
 }
 
-th, td {
-    border: 1px solid #888; /* belső szegélyek */
-    padding: 15px 10px;
+td, th {
+    width: auto;
     text-align: center;
+    border: 1px solid #ccc;
+    padding: 8px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
 }
 
 #search {
@@ -224,4 +229,15 @@ th, td {
     font-size: 18px;
     color: red;
     font-weight: bold;
+}
+
+
+/* */
+
+.ChartBody {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    background-color: wheat;
+    height: 100%;
+    width: 100%;
 }

@@ -126,3 +126,50 @@ function searchTable() {
 
 // Betöltéskor megjeleníti az adatokat
 window.onload = renderTable;
+
+/* ChartJS */
+    
+let chart;
+function drawChart(row) {
+    const cells = row.getElementsByTagName("td");
+    const label = cells[0].innerText;
+    const data = [];
+
+    // Címkék: A, B, C, ... az adatok számától függően
+    const labels = [];
+
+    for (let i = 1; i < cells.length; i++) {
+        data.push(parseFloat(cells[i].innerText));
+        labels.push(String.fromCharCode(64 + i)); // 65=A, 66=B, stb.
+    }
+
+    const ctx = document.getElementById('lineChart').getContext('2d');
+
+    if (chart) {
+        chart.destroy();
+    }
+
+    chart = new Chart(ctx, {
+        type: 'line',
+        data: {
+            labels: labels,
+            datasets: [{
+                label: label + ' adatai',
+                data: data,
+                borderColor: 'rgba(75, 192, 192, 1)',
+                backgroundColor: 'rgba(75, 192, 192, 0.2)',
+                borderWidth: 2,
+                fill: true,
+                tension: 0.3
+            }]
+        },
+        options: {
+            responsive: true,
+            scales: {
+                y: {
+                    beginAtZero: true
+                }
+            }
+        }
+    });
+}
