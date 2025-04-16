@@ -241,3 +241,26 @@ td, th {
     height: 100%;
     width: 100%;
 }
+
+
+/* */
+
+.OOJSBody
+{
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    background-color: wheat;
+    height: 100%;
+    width: 100%;
+}
+
+/* */
+
+.HTML5Body
+{
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    background-color: wheat;
+    height: 100%;
+    width: 100%;       
+}

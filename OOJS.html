@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+    <meta charset="UTF-8">
+    <title>Kezdőlap - Web-programozás-1</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="OOJSBody">
+    <header>
+        <h1>Web-programozás-1 Előadás Házi feladat</h1>
+    </header>
+
+    <nav>
+        <ul>
+            <li><a href="index.html">Kezdőlap</a></li>
+            <li><a href="Table.html">Táblázat</a></li>
+            <li><a href="HTML5.html">HTML5</a></li>
+            <li><a href="ChartJS.html">ChartJS</a></li>
+            <li><a href="AJAX.html">AJAX</a></li>
+            <li class="active"><a href="OOJS.html">OOJS</a></li>
+        </ul>
+    </nav>
+
+    <aside>
+        <p>Oldalsáv</p>
+        <p>Oldalsáv</p>
+        <p>Oldalsáv</p>
+        <p>Oldalsáv</p>
+        <p>Oldalsáv</p>
+        <p>Oldalsáv</p>
+        <p>Oldalsáv</p>
+        <p>Oldalsáv</p>
+    </aside>
+
+    <div class="content">
+
+<div id="car-container" style="display: flex; flex-wrap: wrap; gap: 10px;"></div>
+
+    <script>
+        // Alaposztály: Car
+        class Car {
+            constructor(brand, model, year) {
+                this.brand = brand;
+                this.model = model;
+                this.year = year;
+            }
+
+            getDescription() {
+                return `${this.year} ${this.brand} ${this.model}`;
+            }
+
+            render() {
+                const card = document.createElement('div');
+                card.className = 'car-card';
+                card.style.border = '1px solid #ccc';
+                card.style.padding = '10px';
+                card.style.borderRadius = '10px';
+                card.style.width = '200px';
+                card.style.boxShadow = '2px 2px 6px rgba(0,0,0,0.1)';
+                card.style.background = '#f9f9f9';
+
+                const title = document.createElement('h4');
+                title.innerText = this.getDescription();
+
+                const type = document.createElement('p');
+                type.innerText = 'Típus: Benzines/Dizeles';
+
+                card.appendChild(title);
+                card.appendChild(type);
+                document.getElementById('car-container').appendChild(card);
+            }
+        }
+
+        // Leszármazott osztály: ElectricCar
+        class ElectricCar extends Car {
+            constructor(brand, model, year, batteryCapacity) {
+                super(brand, model, year); // Meghívja az alaposztály konstruktorát
+                this.batteryCapacity = batteryCapacity;
+            }
+
+            getDescription() {
+                return `${super.getDescription()} (Elektromos)`;
+            }
+
+            render() {
+                const card = document.createElement('div');
+                card.className = 'electric-car-card';
+                card.style.border = '1px solid #4caf50';
+                card.style.padding = '10px';
+                card.style.borderRadius = '10px';
+                card.style.width = '200px';
+                card.style.boxShadow = '2px 2px 6px rgba(0,0,0,0.1)';
+                card.style.background = '#e8f5e9';
+
+                const title = document.createElement('h4');
+                title.innerText = this.getDescription();
+
+                const battery = document.createElement('p');
+                battery.innerText = `Akkumulátor: ${this.batteryCapacity} kWh`;
+
+                card.appendChild(title);
+                card.appendChild(battery);
+                document.getElementById('car-container').appendChild(card);
+            }
+        }
+
+        // Példányosítás
+        const cars = [
+            new Car('Ford', 'Mustang', 2020),
+            new Car('Toyota', 'Corolla', 2018),
+            new ElectricCar('Tesla', 'Model 3', 2023, 75),
+            new ElectricCar('Nissan', 'Leaf', 2021, 40),
+            new Car('BMW', 'M3', 2022),
+            new Car('Suzuki', 'Swift', 2003),
+            new Car('Mazda', 'MX5', 2010),
+            new Car('Porsche', '911 s/t', 2017),
+            new Car('Mercedes-Benz', 'G-63', 2018),
+            new Car('Mercedes-AMG', 'GT', 2019)
+
+        ];
+
+        // Mindegyik autó megjelenítése
+        cars.forEach(car => car.render());
+    </script>
+
+        
+</div>
+
+    <footer>
+        <p class="left">Készítette: Tiger Adrián(C3Z0TY)</p>
+        <p class="right">Dobóczi Levente(JC84WP)</p>
+    </footer>
+</body>
+</html>
