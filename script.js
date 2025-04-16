@@ -173,3 +173,87 @@ function drawChart(row) {
         }
     });
 }
+/*  HTML5 */
+function saveData() {
+    let inputValue = document.getElementById("WebStorageInput").value;
+    localStorage.setItem("savedText", inputValue);
+    alert("Elmentve!");
+    document.getElementById("WebStorageInput").value = "";
+  }
+
+  function loadData() {
+    let storedValue = localStorage.getItem("savedText");
+    if (storedValue !== null) {
+      document.getElementById("WebStorageInput").value = storedValue;
+      alert("Vissza töltve, az input mezőbe!");
+    } else {
+      alert("Nincs elmentett adat.");
+    }
+  }
+
+  function clearData() {
+    localStorage.removeItem("savedText");
+    document.getElementById("WebStorageInput").value = "";
+    alert("Törölve!");
+  }
+
+let worker;
+      
+function startWorker() 
+{
+    if (typeof(Worker) !== "undefined") 
+    {
+        if (!worker) 
+        {
+            worker = new Worker("worker.js");
+            worker.onmessage = function(event) 
+            {
+                document.getElementById("result").textContent = event.data;
+            };
+        }
+    } 
+else 
+    {
+    alert("A böngésző nem támogatja a Web Workereket.");
+    }
+}
+
+function stopWorker()
+{
+    if (worker) 
+    {
+        worker.terminate();
+        worker = null;
+    }
+}
+
+const colorBox = document.getElementById("colorBox");
+const colorPicker = document.getElementById("colorPicker");
+
+// Szín mentése a localStorage-be
+function saveColor() {
+  const color = colorPicker.value;
+  localStorage.setItem("selectedColor", color);
+  updateColorBox(color);
+}
+
+// Szín alkalmazása a dobozra
+function updateColorBox(color) {
+  colorBox.style.backgroundColor = color;
+}
+
+// Alapértelmezett szín betöltése oldal betöltéskor
+window.onload = () => {
+  const savedColor = localStorage.getItem("selectedColor");
+  if (savedColor) {
+    updateColorBox(savedColor);
+    colorPicker.value = savedColor;
+  }
+};
+
+// Másik ablak/fül változásaira reagálás
+window.addEventListener("storage", (event) => {
+  if (event.key === "selectedColor") {
+    updateColorBox(event.newValue);
+  }
+});

@@ -264,3 +264,56 @@ td, th {
     height: 100%;
     width: 100%;       
 }
+#WebStorageInput
+{
+    margin-left: 4%;
+    width: 28.7%;
+}
+.WebStorageH2
+{
+margin-left: 5.5%;
+}
+.WebStorageButton
+{
+    margin-left: 4.2%;
+    width: 6.45%;
+}
+
+.WebWorkerH2
+{
+    margin-left: 5.5%;
+}
+.WebWorkerButton
+{
+    margin-left: 3%;
+    width: 13%;
+}
+.WorkerResult
+{
+    margin-left: 12.5%;
+}
+#colorBox
+{
+    width: 200px;
+    height: 200px;
+    border: 2px solid #333;
+    margin-top: 3%;
+    margin-left: 4.5%;
+}
+.ColorPickerH2
+{
+    margin-left: 5.5%;
+}
+#colorPicker
+{
+    height: 6%;
+    margin-top: 1.5%;
+    margin-left: 10%;
+    width: 7%;
+}
+.ColorPickerButton
+{
+    margin-left: 10%;
+    height: 6%;
+    width: 7%;
+}

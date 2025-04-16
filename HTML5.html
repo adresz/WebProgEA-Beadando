@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <title>Kezdőlap - Web-programozás-1</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="style.css">   
 </head>
 <body class="HTML5Body">
     <header>
@@ -33,13 +33,32 @@
     </aside>
 
     <div class="content">
-        <h2>Üdvözöllek!</h2>
-        <p>Ez a főoldal tartalma.</p>
+        <h2 class="WebStorageH2">Web Storage minta</h2>
+        <input type="text" id="WebStorageInput" placeholder="Írj be valamit...">
+        <br>
+      
+        <button class="WebStorageButton" onclick="saveData()">Mentés</button>
+        <button class="WebStorageButton" onclick="loadData()">Betöltés</button>
+        <button class="WebStorageButton" onclick="clearData()">Törlés</button>
+        <br><br>
+
+        <h2 class="WebWorkerH2">Web Worker - Számláló</h2>
+        <button class="WebWorkerButton" onclick="startWorker()">Indítás</button>
+        <button class="WebWorkerButton" onclick="stopWorker()">Leállítás</button>
+        <p class="WorkerResult">Eredmény: <span id="result">0</span></p>    
+        <br><br>
+        <h2 class="ColorPickerH2">Válassz egy színt!</h2>
+        <input type="color" id="colorPicker">
+        <br>
+        <button onclick="saveColor()" class="ColorPickerButton">Választ</button>
+      
+        <div id="colorBox"></div>
     </div>
     
     <footer>
         <p class="left">Készítette: Tiger Adrián(C3Z0TY)</p>
         <p class="right">Dobóczi Levente(JC84WP)</p>
+        <script src="script.js"></script>
     </footer>
 </body>
 </html>
