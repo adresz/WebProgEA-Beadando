@@ -257,3 +257,54 @@ window.addEventListener("storage", (event) => {
     updateColorBox(event.newValue);
   }
 });
+
+// 
+function getLocation() {
+    if (navigator.geolocation) {
+        navigator.geolocation.getCurrentPosition(showPosition);
+    } else {
+        document.getElementById("location").innerHTML = "A geolokációs funkció nem támogatott ezen a böngészőn.";
+    }
+}
+
+function showPosition(position) {
+    document.getElementById("location").innerHTML = "Szélesség: " + position.coords.latitude + "<br>Hosszúság: " + position.coords.longitude;
+}
+
+// Canvas
+const canvas = document.getElementById('canvas');
+const ctx = canvas.getContext('2d');
+ctx.fillStyle = 'red';
+ctx.fillRect(50, 50, 200, 100);
+
+
+const dragItem = document.getElementById("dragme");
+const dropZone = document.getElementById("dropzone");
+
+dragItem.addEventListener("dragstart", (e) => {
+    e.dataTransfer.setData("text/plain", dragItem.id);
+});
+
+dropZone.addEventListener("dragover", (e) => {
+    e.preventDefault();
+    dropZone.classList.add("hovered");
+});
+
+dropZone.addEventListener("dragleave", () => {
+    dropZone.classList.remove("hovered");
+});
+
+dropZone.addEventListener("drop", (e) => {
+    e.preventDefault();
+    const data = e.dataTransfer.getData("text/plain");
+    const draggedElement = document.getElementById(data);
+
+    if (draggedElement && dropZone !== draggedElement.parentElement) {
+        dropZone.innerText = ""; // törli a "Dobd ide" szöveget
+        draggedElement.setAttribute("draggable", "false"); // ne lehessen újra húzni
+        draggedElement.style.cursor = "default";
+        dropZone.appendChild(draggedElement);
+    }
+
+    dropZone.classList.remove("hovered");
+});

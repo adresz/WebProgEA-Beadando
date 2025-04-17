@@ -1,11 +1,13 @@
 <!DOCTYPE html>
 <html lang="hu">
+
 <head>
     <meta charset="UTF-8">
     <title>Kezdőlap - Web-programozás-1</title>
-    <link rel="stylesheet" href="style.css">   
+    <link rel="stylesheet" href="style.css">
 </head>
 <body class="HTML5Body">
+
     <header>
         <h1>Web-programozás-1 Előadás Házi feladat</h1>
     </header>
@@ -36,7 +38,7 @@
         <h2 class="WebStorageH2">Web Storage minta</h2>
         <input type="text" id="WebStorageInput" placeholder="Írj be valamit...">
         <br>
-      
+
         <button class="WebStorageButton" onclick="saveData()">Mentés</button>
         <button class="WebStorageButton" onclick="loadData()">Betöltés</button>
         <button class="WebStorageButton" onclick="clearData()">Törlés</button>
@@ -45,20 +47,45 @@
         <h2 class="WebWorkerH2">Web Worker - Számláló</h2>
         <button class="WebWorkerButton" onclick="startWorker()">Indítás</button>
         <button class="WebWorkerButton" onclick="stopWorker()">Leállítás</button>
-        <p class="WorkerResult">Eredmény: <span id="result">0</span></p>    
+        <p class="WorkerResult">Eredmény: <span id="result">0</span></p>
         <br><br>
-        <h2 class="ColorPickerH2">Válassz egy színt!</h2>
+        <h2 class="ColorPickerH2">SSE szinválasztó</h2>
         <input type="color" id="colorPicker">
         <br>
         <button onclick="saveColor()" class="ColorPickerButton">Választ</button>
-      
+
         <div id="colorBox"></div>
+        <br><br>
+        <h2 class="GeolocationH2">Geolocation lekérő</h2>
+        <button onclick="getLocation()" class="LocationButton">Szerver helyének lekérése</button>
+        <p id="location"></p>
+        <br><br>
+        <!-- Ide megy majd a drag and drop -->
+
+
+        <h2 class="CanvasH2">Canvas</h2>
+        <canvas id="canvas" width="300" height="200"></canvas>
+        <br><br>
+
+        <h2 class="SvgH2">SVG</h2>
+        <svg width="300" height="200">
+            <circle cx="150" cy="100" r="50" stroke="black" stroke-width="3" fill="yellow" />
+            <rect x="50" y="150" width="200" height="30" stroke="black" stroke-width="3" fill="green" />
+        </svg>
+
+        <br><br>
+        <h2 class="DragNDropH2">Drag and Drop</h2>
+        <div class="container">
+            <div id="dragme" class="draggable" draggable="true">Fogj meg</div>
+            <div id="dropzone">Tegyél ide</div>
+        </div>
     </div>
-    
+
     <footer>
         <p class="left">Készítette: Tiger Adrián(C3Z0TY)</p>
         <p class="right">Dobóczi Levente(JC84WP)</p>
         <script src="script.js"></script>
     </footer>
 </body>
+
 </html>
