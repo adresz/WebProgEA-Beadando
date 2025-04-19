@@ -78,7 +78,7 @@ aside {
     top: 30%; /* A nav alatt kezdődik */
     bottom: 0; /* Az oldal aljáig ér */
     right: 0;
-    height: 50%; /* Kitölti a képernyőt, figyelembe véve a nav és footer magasságát */
+    height: 50%;
     overflow-y: auto; /* Görgetés, ha túl sok tartalom */
     text-align: center;
 }
@@ -379,7 +379,11 @@ margin-left: 7.5%;
 }
 .AJAXBody
 {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
     background-color: wheat;
+    height: 100%;
+    width: 100%;      
 }
 .AJAXH2
 {

@@ -1,0 +1,133 @@
+/* Alap beállítások */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Arial', sans-serif;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100vh;
+  width: 100%;
+  line-height: 1.6;
+  background: wheat;
+  color: #333;
+}
+
+#root {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  flex-grow: 1;
+}
+
+/* Fejléc */
+header {
+  background-color: #004466;
+  color: white;
+  padding: 20px;
+  text-align: center;
+  margin-bottom: 0;
+}
+
+/* Navigáció */
+nav {
+  background-color: #006699;
+}
+
+a {
+  text-decoration: none;
+}
+
+nav ul {
+  display: flex;
+  flex-wrap: wrap;
+  list-style: none;
+  justify-content: center;
+  margin: 0;
+}
+
+nav li {
+  margin: 0;
+}
+
+nav a {
+  display: block;
+  padding: 14px 20px;
+  color: white;
+  text-decoration: none;
+  transition: background-color 0.3s;
+}
+
+nav li.active a,
+nav a:hover {
+  background-color: #004466;
+  font-weight: bold;
+}
+
+/* Kő-Papír-Olló Játék */
+.game-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 30px;
+}
+
+button {
+  font-size: 1.2em;
+  padding: 10px 20px;
+  margin: 10px;
+  cursor: pointer;
+  background-color: #004466;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+button:hover {
+  background-color: #006699;
+  transform: scale(1.1);
+}
+
+button:active {
+  transform: scale(0.95);
+}
+
+.result {
+  margin-top: 20px;
+  font-size: 1.5em;
+  font-weight: bold;
+  color: #004466;
+}
+
+.result span {
+  color: #ff6347; /* Zöld, piros szín a nyertes és vesztes jelzésére */
+}
+
+.ToWin {
+  color: red;
+}
+
+/* Eredmény */
+.winner {
+  color: green;
+}
+
+.loser {
+  color: red;
+}
+
+/* Lábléc */
+footer {
+  background-color: #004466;
+  color: white;
+  text-align: center;
+  padding: 20px;
+  margin-top: auto;
+  width: 100%;
+}

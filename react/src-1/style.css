@@ -1,0 +1,103 @@
+/* Alap beállítások */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: sans-serif;
+    display: flex;
+    flex-direction: column; /* Felfelé irányuló elrendezés */
+    justify-content: space-between; /* Fejléc, tartalom, lábléc */
+    height: 100%;
+    width: 100%;
+    line-height: 1.6;
+    background: wheat;
+}
+
+#root {
+    display: flex;
+    margin-top: 10%;
+    margin-bottom: 10%;
+    margin-left: 40%;
+    width: 300px;
+    height: 300px;
+}
+
+/* Navigáció */
+nav {
+    background-color: #006699;
+}
+
+a {
+    text-decoration: none;
+}
+
+nav ul {
+    display: flex;
+    flex-wrap: wrap;
+    list-style: none;
+    justify-content: center;
+}
+
+nav li {
+    margin: 0;
+}
+
+nav a {
+    display: block;
+    padding: 14px 20px;
+    color: white;
+    text-decoration: none;
+    transition: background-color 0.3s;
+}
+
+nav li.active a,
+nav a:hover {
+    background-color: #004466;
+    font-weight: bold;
+}
+
+@media (max-width: 767px) {
+    nav ul {
+        flex-direction: column;
+    }
+}
+
+header {
+    background-color: #004466;
+    color: white;
+    padding: 20px;
+    text-align: center;
+    /* Fejléc pozicionálása */
+}
+
+/* Lábléc */
+footer {
+    background-color: #004466;
+    color: white;
+    text-align: center;
+    padding: 20px;
+    /* A lábléc mindig a legalján legyen */
+    margin-top: auto;
+    width: 100%;
+}
+.right
+{
+    float: right;
+}
+.left
+{
+    float: left;
+}
+h2{
+    font-size: 1.5em;
+    text-align: center;
+    color: red;
+}
+.ToWin
+{
+    line-height: 1em;
+    color:red;
+}
