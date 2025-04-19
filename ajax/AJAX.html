@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="hu">
+
+<head>
+    <meta charset="UTF-8">
+    <title>AJAX - Webprog HF</title>
+    <link rel="stylesheet" href="../style.css">
+    <script src="ajax.js" defer></script>
+</head>
+
+<body class="AJAXBody">
+    <header>
+        <h1>Web-programozás-1 AJAX Házi feladat</h1>
+    </header>
+
+    <nav>
+        <ul>
+            <li><a href="../index.html">Kezdőlap</a></li>
+            <li><a href="../Table.html">Táblázat</a></li>
+            <li><a href="../HTML5.html">HTML5</a></li>
+            <li><a href="../ChartJS.html">ChartJS</a></li>
+            <li class="active"><a href="ajax.html">AJAX</a></li>
+            <li><a href="../OOJS.html">OOJS</a></li>
+        </ul>
+    </nav>
+
+    <div class="content">
+        <h2 class="AJAXH2">Adatkezelés</h2>
+
+        <form id="dataForm" class="AJAXInputs">
+            <input type="number" id="id" placeholder="ID">
+            <!-- Az ID mező csak módosításnál vagy törlésnél aktív -->
+
+            <input type="text" id="name" placeholder="Név" maxlength="30">
+            <input type="number" id="height" placeholder="Magasság">
+            <input type="number" id="weight" placeholder="Súly">
+
+            <div class="AJAXInputsRadios">
+                <label><input type="radio" name="operation" value="create" checked> Létrehozás</label>
+                <label><input type="radio" name="operation" value="update"> Módosítás</label>
+                <label><input type="radio" name="operation" value="delete"> Törlés</label>
+            </div>
+
+            <div id="output"></div>
+            <div id="stats" style="margin-top: 1rem;"></div>
+
+            <button type="submit" class="AJAXButton">Végrehajtás</button>
+            <button id="queryButton" class="AJAXButton">Lekérdezés</button>
+        </form>
+
+        <div id="feedback" style="margin-top: 10px; color: green;"></div>
+
+        <h2 class="AJAXH2">Adatok</h2>
+        <table id="dataTable" class="AJAXTable">
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Név</th>
+                    <th>Magasság</th>
+                    <th>Súly</th>
+                    <th>Kód</th>
+                </tr>
+            </thead>
+            <tbody></tbody>
+        </table>
+    </div>
+
+    <footer>
+        <p class="left">Készítette: Tiger Adrián (C3Z0TY)</p>
+        <p class="right">Dobóczi Levente (JC84WP)</p>
+    </footer>
+</body>
+
+</html>

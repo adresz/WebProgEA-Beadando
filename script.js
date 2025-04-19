@@ -125,7 +125,6 @@ function searchTable() {
 }
 
 // Betöltéskor megjeleníti az adatokat
-window.onload = renderTable;
 
 /* ChartJS */
     
@@ -244,6 +243,7 @@ function updateColorBox(color) {
 
 // Alapértelmezett szín betöltése oldal betöltéskor
 window.onload = () => {
+  renderTable();
   const savedColor = localStorage.getItem("selectedColor");
   if (savedColor) {
     updateColorBox(savedColor);
